@@ -1,7 +1,15 @@
 # Network Implemented with 4 VLANs
 This document describes a network design utilizing four VLANs (Virtual Local Area Networks) to segment traffic and enhance security.
 
-VLAN Breakdown
+# Router
+
+The router will provide the devices in the network with IP addresses through the use of DHCP
+
+# Switch 
+
+The switch will manage all the network traffic and avoid collision between the devices on the network and will allow for connectivity across VLANs (Inter-VLAN connectivity)
+
+# VLAN Breakdown
 VLAN 1: Voice (192.168.80.0/24 - Example)
 
 Devices:
@@ -24,11 +32,12 @@ VLAN 4: Security (192.168.83.0/24 - Example)
 Devices:
 Webcam
 Description: This VLAN carries video traffic from the security camera. Isolating security footage enhances network security and potentially improves video stream quality.
-Inter-VLAN Communication:
 
-While each VLAN functions as a separate broadcast domain, communication between VLANs can be achieved through a Layer 3 device like the Mikrotik 960 router. This allows, for example, IP phones in VLAN 1 to communicate with workstations in VLAN 2 through properly configured routing rules.
+# Inter-VLAN Communication:
 
-Benefits of VLAN Implementation:
+While each VLAN functions as a separate broadcast domain, communication between VLANs can be achieved through the switch and the Mikrotik 960. This allows, for example, IP phones in VLAN 1 to communicate with workstations in VLAN 2 through properly configured routing rules.
+
+# Benefits of VLAN Implementation:
 
 Improved Security: Separating traffic types minimizes the attack surface and potential for unauthorized access across the network.
 Enhanced Performance: Isolating traffic reduces network congestion, leading to smoother performance for voice calls, data transfer, and video streaming.
